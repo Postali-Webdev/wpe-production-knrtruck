@@ -1,0 +1,276 @@
+/**
+ * Web Font Styles, H Styles, Body Text Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+/* Fonts */
+body, h1, h2, h3, h4, h5, h6, p, a, ul {
+    // color: $body-text-color;
+} 
+
+h1,h2, h3, h4, p, li, span, a  {
+    color: $blk;
+    margin-top: 0;
+    margin-bottom: 30px;
+    font-weight: 400;
+}
+
+h1 {
+    font-size: 65px;
+    color: $blk;
+    line-height: 1;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-family: $libre;
+
+    @include respond(tab-port) {
+        font-size: 55px;   
+    }
+
+    @include respond(phone) {
+        font-size: 40px;   
+        line-height: 120%;
+    }
+
+    @include respond(phone) {
+        margin-bottom: 10px;
+    }
+    
+}
+
+h2 {
+    font-size: 45px;   
+    margin-bottom: 20px;
+    font-family: $libre;
+    font-weight: 400 !important;
+    color:$blk;
+    
+    @include respond(tab-port) {
+        font-size: 42px;       
+    }
+
+    @include respond(phone) {
+        font-size: 32px;       
+    }
+
+    &:not(:first-of-type) {
+        margin-top: 40px;
+    }
+
+    a {
+        font-size: 55px;   
+        font-family: inherit;
+        
+        @include respond(tab-port) {
+            font-size: 42px;       
+        }
+    }
+}
+
+h3 {
+    font-size: 32px;
+    font-family: $heebo;
+    margin-bottom: 20px;
+    
+    @include respond(tab-port) {
+        font-size: 35px;
+    }
+
+    @include respond(phone) {
+        font-size: 26px;
+    }
+}
+
+h4, h4 a {
+    font-size: 30px;
+    @include respond(tab-port) {
+        font-size: 25px;
+    }
+}
+
+h4 a {
+    font-weight: $bold;
+    text-decoration: underline;
+    display: block;
+}
+
+ul:not(#menu-main-menu), ol {
+    margin-left: 20px;
+    margin-top: 0;
+    list-style-position: outside;
+    margin-bottom: 30px;
+
+}
+
+ul li, ol li {
+    margin: 0;
+    font-size: 18px;
+}
+dl, blockquote, img {
+
+}
+
+a {
+    margin-bottom: 0;
+    text-decoration:none;
+    transition:$trans;
+    &:hover {
+        color: $white;
+        text-decoration:none;
+    }
+}
+
+span {
+    margin: 0;
+    padding: 0;
+}
+
+.btn:not(.btn-search), .nav-btn {
+    display:inline-flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 0px 25px;
+    text-decoration:none;
+    background:$red;
+    color: $white;
+    transition:$trans;
+    height: 50px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    min-width: 75px;
+    border-radius: 50px;
+    font-family: $heebo;
+    white-space: nowrap;
+
+    &.square {
+        border-radius: 0;
+    }
+
+    span, a {
+        position: relative;
+        color: $white !important;
+        font-size: 18px;
+        font-family: $heebo;
+    }
+
+    a {
+        &:hover {
+            &:before {
+                display: none;
+            }
+        }
+    }
+
+    & > * {
+        position: relative;
+        z-index: 2;
+    }
+
+    &.phone {
+        min-width: 125px;
+    }
+
+    &:hover {
+        background: $ltgrey;
+        color:$blk !important;
+        
+        span, a {
+            color: $blk !important;
+        }
+        a {
+            position: relative !important;
+            z-index: 2 !important;
+        }
+    }
+}
+
+.nav-btn {
+    margin-bottom: 0;
+    @include respond(desktop) {
+        padding: 0 25px;
+    }
+    @include respond(med-device) {
+        width: 200px;
+        margin-top: 0px !important;
+        margin-left: 4% !important;
+        padding: 5px 1% !important;
+    }
+    a::before {
+        display: none !important;
+    }
+}
+
+p, a, li, p > a {
+    font-size: 16px;
+    line-height: 175%;
+    margin-bottom:30px;
+    font-family: $heebo;
+}
+
+.social-icon {
+    height: 25px;
+    width: 25px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    &_facebook {
+        background-image: url('/wp-content/uploads/2022/11/footer-facebook-icon.svg');
+    }
+    &_twitter {
+        background-image: url('/wp-content/uploads/2022/11/footer-twitter-icon.svg');
+    }
+    &_linkedin {
+        background-image: url('/wp-content/uploads/2022/11/footer-linkedin-icon.svg');
+    }
+    &_instagram {
+        background-image: url('/wp-content/uploads/2022/11/WL_Instagram.svg');
+    }
+    &_youtube{
+        background-image: url('/wp-content/uploads/2022/11/footer-youtube-icon.svg');
+    }
+}
+
+.subtitle {
+    font-size: 15px;
+    font-weight: $normal;
+    letter-spacing: 2.4px;
+}
+
+.green {
+    color: $blk;
+}
+
+.heavy-text {
+    font-size: 30px;
+}
+
+.cta-text {
+    font-size: 16px;
+    letter-spacing: -0.4px;
+    span {
+        color: $green;
+    }
+}
+
+@-webkit-keyframes highlight {
+    from {background-position: 0% 0;}
+    to {background-position: -100% 0;}
+}
+
+@keyframes highlight {
+    from {background-position: 0% 0;}
+    to {background-position: -100% 0;}
+}
+
+.highlight > a, li:not(.menu-item, .ignore-highlight) > a, a.highlight {
+    border-bottom: 2px solid $red;
+
+	&:hover {
+        border-bottom:2px solid transparent;
+        color:inherit;
+    }
+}

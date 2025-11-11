@@ -1,0 +1,242 @@
+/**
+ * Footer Styles
+ *
+ * @package Postali Child
+ * @author Postali LLC
+**/
+
+.cta-follower {
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    bottom: 140px;
+    background: $white;
+    z-index: 10;
+    right: 25px;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    max-width: 260px;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+
+    @include respond(phone) {
+        display:none;
+    }
+
+    &.closed {
+        display:none;
+    }
+
+    .cta-close {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+
+        .icon-close-icon {
+            display: flex;
+            padding: 5px;
+            background: $ltgrey;
+            border-radius: 50%;
+            width: 17px;
+            height: 17px;
+            justify-content: center;
+            align-items: center;
+
+            &::before {
+                font-size: 12px;
+            }
+        }
+    }
+
+    p {
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 140%;
+        margin-bottom: 20px;
+        max-width: 75%;
+        margin:0 auto 15px;
+    }
+
+    .btn {
+        margin-bottom: 0;
+        padding: 0px 25px;
+        width: -webkit-max-content;
+        width: -moz-max-content;
+        width: max-content;
+        height: 35px;
+        margin: 0 auto;
+
+        span {
+            font-size: 14px;
+        }
+    }
+}
+
+footer {
+    position: relative;
+    z-index: 1;
+    
+    #footer-block {
+        padding: 80px 0;
+        position: relative;
+        background: $white;
+        margin-top: 0;
+
+        @include respond(tab-land) {
+            padding-bottom: 0;
+        }
+        
+        .container {
+            & > .columns {
+                @include respond(tab-land) {
+                    flex-direction: column-reverse;
+                }
+                & > .column-50 {
+                    @include respond(tab-land) {
+                        width: 100%;
+                        flex-direction: column;
+
+                        a.postali {
+                            img {
+                                -webkit-filter: invert(1);
+                                        filter: invert(1);
+                            }
+                        }
+                        
+                        &:last-of-type {
+                            margin-bottom: 50px;
+                        }
+                    }
+                }
+
+            }
+        }
+        .logo-social-container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            width: 100%;
+            @include respond(desktop) {
+                flex-direction: column;
+            }
+            @include respond(tab-land) {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+                flex-wrap: wrap;
+            }
+            .directions-container {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
+                @include respond(phone) {
+                    margin-right: 0;
+                }
+                .address {
+                    margin-bottom: 0;
+                }
+                .directions {
+                    text-decoration: underline;
+                }
+            }
+            .custom-logo-link {
+                height: auto;
+                width: 350px;
+                @include respond(desktop) {
+                    margin-right: 0;
+                }
+            }
+            .socials {
+                p {
+                    margin-bottom: 0;
+                    font-size: 14px;
+                    line-height: normal;
+                    margin-bottom: 10px;
+                }
+                .social-container {
+                    display: flex;
+                    a {
+                        -webkit-filter: invert(1);
+                                filter: invert(1);
+                        margin: 0 2.5px;
+                        &:first-of-type {
+                            margin: 0 2.5px 0 0;
+                        }
+                        &:last-of-type {
+                            margin: 0 0 0 2.5px;
+                        }
+                    }
+                }
+            }
+        }
+        .disclaimer {
+            font-size: 12px;
+            line-height: 20px;
+            margin-top: 20px;
+            a {
+                font-size: 12px;
+                -webkit-animation-name: none;
+                        animation-name: none;
+                padding: 0;
+                text-decoration: underline;
+            }
+        }
+        .locations-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: flex-start;
+
+            @include respond(tab-port) {
+                width: 100%;
+            }
+
+            .location {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background: $ltgrey;
+                height: 60px;
+                width: 200px;
+                color: $blk;
+                margin:3px;
+
+                @include respond(tab-land) {
+                    width: 33%;
+                }
+
+                @include respond(tab-port) {
+                    width: 49%;
+                }
+
+                @include respond(phone) {
+                    width: 100%;
+                }
+
+                a {
+                    height: 100%;
+                    width: 100%;
+                    margin: 0;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    
+                    span {
+                        position: relative;
+                        z-index: 2;
+                    }
+
+                    &:hover {
+                        background:$red;
+
+                        span {
+                            color: $white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
