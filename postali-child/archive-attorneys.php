@@ -59,6 +59,21 @@ get_header();?>
         </div>
     </section>
     <span id="main-content"></span>
+
+    <section class="header-video">
+        <div class="container">
+            <div class="columns">
+                <div class="column-50">
+                    <?php $video_embed = get_field('video_embed_shortcode','options'); ?>
+                    <?php echo do_shortcode( $video_embed ); ?>
+                </div>
+                <div class="column-50">
+                    <?php the_field('video_description','options'); ?>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <?php if( have_posts() ) : ?>
     <section class="attorney-container">
         <div class="container">
